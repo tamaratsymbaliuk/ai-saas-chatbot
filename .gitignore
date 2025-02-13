@@ -1,8 +1,6 @@
-# ignore node modules
-node_modules/
-
-
-# clerk configuration (can include secrets)
-/.clerk/
-
+.clerk/
 .env
+.history/
+.next/
+.vscode/
+node_modules/
