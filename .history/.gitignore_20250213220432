@@ -1,0 +1,7 @@
+.clerk/
+.env
+.history/
+.next/
+.vscode/
+node_modules/
+package-lock.json
