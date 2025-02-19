@@ -14,6 +14,20 @@ pnpm dev
 bun dev
 ```
 
+npx prisma migrate dev
+
+ngrok http 3000
+
+bud dev
+
+npx prisma migrate dev --name what_you_changed
+npx prisma migrate dev --name add_new_field_to_user
+
+npx prisma studio
+npx prisma generate
+npx prisma migrate reset
+npx prisma migrate status
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
