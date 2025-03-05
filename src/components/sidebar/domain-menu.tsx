@@ -1,4 +1,4 @@
-import { useDomain } from "@/hooks/sidebar/use-domain";
+import { useDomain } from "@/hooks/use-domain";
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect } from "react";
 import { PlusCircle, X } from "lucide-react";

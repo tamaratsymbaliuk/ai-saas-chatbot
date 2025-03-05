@@ -10,8 +10,12 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.11.2",
+    "@hookform/resolvers": "^4.1.2",
     "@prisma/client": "^6.3.0",
+    "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-slot": "^1.1.2",
+    "@uploadcare/react-uploader": "^1.5.0",
+    "@uploadcare/upload-client": "^6.14.3",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -21,9 +25,11 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
+    "sonner": "^2.0.1",
     "svix": "^1.45.1",
     "tailwind-merge": "^3.0.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -38,6 +44,3 @@
     "typescript": "^5"
   }
 }
-
-
-
