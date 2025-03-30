@@ -1,15 +1,24 @@
-import { PageHeader } from "@/components/page-header";
+import { onGetAllAccountDomains } from '@/actions/settings'
+import ConversationMenu from '@/components/conversations'
+import Messenger from '@/components/conversations/messenger'
+import InfoBar from '@/components/infobar'
+import { Separator } from '@/components/ui/separator'
+import React from 'react'
 
-export default function ConversationsPage() {
+const ConversationPage = async () => {
+  const domains = await onGetAllAccountDomains()
   return (
-    <div className="h-full bg-gray-100">
-      <PageHeader title="Conversations" />
-      <div className="p-6">
-        <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-2xl font-bold mb-4">Your Conversations</h2>
-          <p className="text-gray-600">No conversations yet.</p>
+    <div className="w-full h-full flex">
+      <ConversationMenu domains={domains?.domains} />
+      <Separator orientation="vertical" />
+      <div className="w-full flex flex-col">
+        <div className="px-5">
+          <InfoBar />
         </div>
+        <Messenger />
       </div>
     </div>
-  );
+  )
 }
+
+export default ConversationPage

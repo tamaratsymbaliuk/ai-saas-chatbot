@@ -9,13 +9,54 @@ export const AddDomainSchema = z.object({
 });
 */
 
-import * as z from "zod";
+// // my working code
+
+// import * as z from "zod";
+
+// export const AddDomainSchema = z.object({
+//   name: z
+//     .string()
+//     .min(1, "Domain name is required")
+//     .regex(
+//       /^([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/,
+//       "Please enter a valid domain name (e.g., example.com)"
+//     ),
+//   icon: z.string().min(1, "Domain icon is required"),
+//   campaignId: z.string().optional(),
+// });
+
+// export type AddDomainInput = z.infer<typeof AddDomainSchema>;
+
+// Arslan's code
+import { z } from 'zod';
+
+export const MAX_UPLOAD_SIZE = 1024 * 1024 * 2
+export const ACCEPTED_FILE_TYPES = ['image/png', 'image/jpg', 'image/jpeg']
+
+export type DomainSettingsProps = {
+  domain?: string
+  image?: any
+  welcomeMessage?: string
+}
+
+export type HelpDeskQuestionsProps = {
+  question: string
+  answer: string
+}
+
+export type AddProductProps = {
+  name: string
+  image: any
+  price: string
+}
+
+export type FilterQuestionsProps = {
+  question: string
+}
 
 export const AddDomainSchema = z.object({
-  name: z
-    .string()
-    .min(1, "Domain name is required")
-    .regex(
+  domain: z.string().min(4, 'A domain must have at least 3 characters')
+  .regex(
       /^([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/,
       "Please enter a valid domain name (e.g., example.com)"
     ),
@@ -24,16 +65,4 @@ export const AddDomainSchema = z.object({
 });
 
 export type AddDomainInput = z.infer<typeof AddDomainSchema>;
-
-// Arslan's code
-// import { z } from 'zod';
-
-// export const AddDomainSchema = z.object({
-//   domainName: z.string().min(1, 'Domain name is required'),
-//   icon: z.instanceof(File).optional(),
-//   // Add other fields as needed
-// });
-
-// export type AddDomainSchemaType = z.infer<typeof AddDomainSchema>;
-
 
